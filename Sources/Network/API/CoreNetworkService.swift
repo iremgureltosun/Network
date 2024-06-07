@@ -46,6 +46,7 @@ open class CoreNetworkService<T> where T: HTTPResponseProtocol {
                         self.debugText = "Value \(value) not found: \(context.debugDescription) \n Coding path \(context.codingPath)"
                     case let .typeMismatch(type, context):
                         self.debugText = "Type: \(type) mismatched: \(context.debugDescription) \n Coding path \(context.codingPath)"
+                    default: self.debugText = "\(error.localizedDescription)"
                     }
                     print(self.debugText)
                     return error
@@ -82,6 +83,7 @@ open class CoreNetworkService<T> where T: HTTPResponseProtocol {
                         self.debugText = "Value \(value) not found: \(context.debugDescription) \n Coding path \(context.codingPath)"
                     case let .typeMismatch(type, context):
                         self.debugText = "Type: \(type) mismatched: \(context.debugDescription) \n Coding path \(context.codingPath)"
+                    default: self.debugText = "\(error.localizedDescription)"
                     }
                     print(self.debugText)
                     return error
